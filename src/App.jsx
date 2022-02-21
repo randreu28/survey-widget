@@ -15,7 +15,7 @@ export default function App() {
                     </svg>
                     <p className='text-white text-center text-xl font-bold sm:text-2xl md:text-3xl'>
                         <span className='opacity-25'>&lt;</span>
-                        Project in construction
+                        Dummy
                         <span className='opacity-25'>/&gt;</span>
                     </p>
                 </div>
