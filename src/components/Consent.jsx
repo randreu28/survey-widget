@@ -1,4 +1,4 @@
-export default function Consent() {
+export default function Consent({setIsShowing}) {
     return (
         <>
             <div className='flex space-x-10'>
@@ -25,7 +25,7 @@ export default function Consent() {
                     </svg>
                     <h1 className='text-xl pb-3 my-auto max-w-xs'>¡Ayudanos a mejorar nuestros  servicios!</h1>
                 </div>
-                <button class='hover:bg-gray-100 rounded p-2 h-fit'>
+                <button class='hover:bg-gray-100 rounded p-2 h-fit' onClick={()=>setIsShowing(-1)}>
                     <svg xmlns='http://www.w3.org/2000/svg' className='h-6 w-6' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
                         <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M6 18L18 6M6 6l12 12' />
                     </svg>
@@ -33,14 +33,14 @@ export default function Consent() {
             </div>
 
             <div className='space-x-5 flex justify-end pb-3 border-b-2'>
-                <button className='text-blue-500 py-2 px-3 hover:bg-blue-100 rounded-lg duration-100 font-semibold'>
+                <button onClick={()=>setIsShowing(-1)} className='text-blue-500 py-2 px-3 hover:bg-blue-100 rounded-lg duration-100 font-semibold'>
                     No, gracias
                 </button>
-                <button className='text-white bg-blue-600 rounded-lg py-2 px-3 font-semibold hover:bg-opacity-90 duration-100'>
+                <button onClick={()=>setIsShowing(1)} className='text-white bg-blue-600 rounded-lg py-2 px-3 font-semibold hover:bg-opacity-90 duration-100'>
                     Ayudanos
                 </button>
             </div>
-            <p className='max-w-fit text-sm text-gray-600 leading-1'>
+            <p className='max-w-fit text-sm text-gray-600 pt-1'>
                 Al continuar, accede que utilicemos sus respuestas
                 y datos de usuario para mejorar nuestros servicios.
             </p>
