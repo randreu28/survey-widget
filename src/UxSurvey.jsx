@@ -15,18 +15,18 @@ export default function UxSurvey() {
 
   return (
     <>
-      {isShowing != -1 ?
+      {isShowing !== -1 ?
         <div className='fixed z-[999] p-5 bottom-0 right-0 m-6 text-black bg-white rounded-xl space-y-3'>
 
-          {isShowing == 0 ?
+          {isShowing === 0 ?
             <Consent setIsShowing={setIsShowing} /> : <></>
           }
 
-          {isShowing == 1 ?
+          {isShowing === 1 ?
             <Ux setIsShowing={setIsShowing}/> : <></>
           }
 
-          {isShowing == 2 ?
+          {isShowing === 2 ?
             <Thanks setIsShowing={setIsShowing} /> : <></>
           }
         </div>
