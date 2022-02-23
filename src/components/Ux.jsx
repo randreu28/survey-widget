@@ -48,7 +48,7 @@ export default function Ux({ setIsShowing }) {
         </button>
       </div>
 
-      <div className='flex space-x-4 justify-center'>
+      <div className='flex space-x-4 justify-center pb-1.5'>
         <button className='hover:bg-gray-100 p-3 rounded-xl duration-100' onClick={sad}>
           <Sad className='h-5 w-5 sm:h-10 sm:w-10' />
         </button>
