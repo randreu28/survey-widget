@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const X_Icon = (props) => (
+const XIcon = (props) => (
   <svg xmlns='http://www.w3.org/2000/svg'
     {...props}
     fill='none'
@@ -13,4 +13,4 @@ const X_Icon = (props) => (
   </svg>
 )
 
-export default X_Icon
+export default XIcon

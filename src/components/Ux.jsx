@@ -4,7 +4,7 @@ import Sad from '../media/Sad'
 import Unhappy from '../media/Unhappy'
 import VeryHappy from '../media/VeryHappy'
 import Logo from '../media/Logo'
-import X_Icon from '../media/X_Icon'
+import XIcon from '../media/XIcon'
 
 export default function Ux({ setIsShowing }) {
 
@@ -44,7 +44,7 @@ export default function Ux({ setIsShowing }) {
           <h1 className='sm:text-xl pb-3 my-auto max-w-xs'>¿Qué tan satisfecho estás con nuestros servicios hoy?</h1>
         </div>
         <button className='hover:bg-gray-100 rounded p-2 h-fit' onClick={() => setIsShowing(-1)}>
-          <X_Icon className='h-6 w-6'/>
+          <XIcon className='h-6 w-6'/>
         </button>
       </div>
 

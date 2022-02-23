@@ -1,5 +1,5 @@
 import Logo from '../media/Logo'
-import X_Icon from '../media/X_Icon'
+import XIcon from '../media/XIcon'
 
 export default function Consent({ setIsShowing }) {
     return (
@@ -10,7 +10,7 @@ export default function Consent({ setIsShowing }) {
                     <h1 className='text-xl pb-3 my-auto max-w-xs'>¡Ayudanos a mejorar nuestros  servicios!</h1>
                 </div>
                 <button className='hover:bg-gray-100 rounded p-2 h-fit' onClick={()=>setIsShowing(-1)}>
-                    <X_Icon className='h-6 w-6'/>
+                    <XIcon className='h-6 w-6'/>
                 </button>
             </div>
 
