@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Transition } from '@headlessui/react'
 
 import Consent from './components/Consent.jsx'
@@ -8,11 +8,17 @@ import Thanks from './components/Thanks.jsx'
 
 export default function UxSurvey() {
 
-  const [isShowing, setIsShowing] = useState(0)
+  const [isShowing, setIsShowing] = useState(-1)
   const [isAnimationDone, setAnimationDone] = useState(0)
 
+  /* Espera 25000ms, luego monta el Popup. */
+  useEffect(() => {
+    setTimeout(function () {
+      setIsShowing(0)
+    }, 2500)
+  }, [setIsShowing])
+
   /* Por implementar:
-  - Contador antes de enseñar el PopUp
 
   - Convencionalismos Aria para accesibilidad
 
@@ -69,7 +75,7 @@ export default function UxSurvey() {
             enter='transition-opacity duration-200'
             enterFrom='opacity-0'
             enterTo='opacity-100'
-            leave='transition-opacity duration-200'
+            leave='transition-opacity duration-300'
             leaveFrom='opacity-100'
             leaveTo='opacity-0'>
             <Thanks setIsShowing={setIsShowing} />
