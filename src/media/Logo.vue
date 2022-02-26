@@ -1,3 +1,9 @@
+<script setup>
+const props = defineProps({
+  class: String,
+});
+</script>
+
 <template>
   <svg
     :class="class"

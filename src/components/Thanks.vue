@@ -1,3 +1,10 @@
+<script setup>
+import Logo from '../media/Logo.vue';
+</script>
+
 <template>
-<h1>Thanks component</h1>
+  <div class="flex justify-between space-x-5">
+    <Logo class="h-6 w-6" />
+    <h1>Gracias!</h1>
+  </div>
 </template>
