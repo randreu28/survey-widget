@@ -41,6 +41,20 @@ onMounted(() => {
     </div>
   </div>
   <span class="h-[200rem] block" /><!-- Scrolling -->
+  <Transition name="fade" mode="out-in">
   <component v-if="store.currentTab !== null" :is="store.currentTab" class="fixed z-[999] p-5 bottom-0 right-0 m-3 sm:m-6 text-black bg-white rounded-xl">
   </component>
+  </Transition>
 </template>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

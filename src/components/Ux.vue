@@ -7,6 +7,19 @@ import Neutral from "../media/Neutral.vue";
 import Happy from "../media/Happy.vue";
 import VeryHappy from "../media/VeryHappy.vue";
 import { store } from "../store.js";
+
+function getData(a){
+  store.currentTab = 'Thanks'
+  const date = new Date();
+  const data = {
+    ux: a,
+    date: date,
+    userLang: navigator.language || navigator.userLanguage,
+    url: window.location.href,
+    //...
+  }
+  console.log(data)
+}
 </script>
 
 <template>
@@ -28,31 +41,31 @@ import { store } from "../store.js";
     <div class="flex space-x-4 justify-center pb-1.5">
       <button
         class="hover:bg-gray-100 p-3 rounded-xl duration-100"
-        @click="store.currentTab = 'Thanks'"
+        @click="getData(1)"
       >
         <Sad class="h-5 w-5 sm:h-10 sm:w-10" />
       </button>
       <button
         class="hover:bg-gray-100 p-3 rounded-xl duration-100"
-        @click="store.currentTab = 'Thanks'"
+        @click="getData(2)"
       >
         <Unhappy class="h-5 w-5 sm:h-10 sm:w-10" />
       </button>
       <button
         class="hover:bg-gray-100 p-3 rounded-xl duration-100"
-        @click="store.currentTab = 'Thanks'"
+        @click="getData(3)"
       >
         <Neutral class="h-5 w-5 sm:h-10 sm:w-10" />
       </button>
       <button
         class="hover:bg-gray-100 p-3 rounded-xl duration-100"
-        @click="store.currentTab = 'Thanks'"
+        @click="getData(4)"
       >
         <Happy class="h-5 w-5 sm:h-10 sm:w-10" />
       </button>
       <button
         class="hover:bg-gray-100 p-3 rounded-xl duration-100"
-        @click="store.currentTab = 'Thanks'"
+        @click="getData(5)"
       >
         <VeryHappy class="h-5 w-5 sm:h-10 sm:w-10" />
       </button>

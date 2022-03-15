@@ -1,7 +1,9 @@
 <script setup>
-import Logo from '../media/Logo.vue';
-
-
+import Logo from "../media/Logo.vue";
+import { store } from "../store.js";
+setTimeout(function () {
+  store.currentTab = null;
+}, 2500);
 </script>
 
 <template>
