@@ -12,6 +12,7 @@ function getData(a){
   store.currentTab = 'Thanks'
   const date = new Date();
   const data = {
+    clientId: window.APP_CONFIG.clientId,
     ux: a,
     date: date,
     userLang: navigator.language || navigator.userLanguage,
