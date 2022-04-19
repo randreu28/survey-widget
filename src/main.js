@@ -1,7 +1,7 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import './index.css'
+import { defineCustomElement } from "vue";
+import App from "./App.ce.vue";
+import "./index.css";
 
-const app = createApp(App);
+const element = defineCustomElement(App);
 
-app.mount("#app");
+customElements.define("ux-survey", element);

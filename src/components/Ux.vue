@@ -1,4 +1,4 @@
-<script setup>
+<script>
 import Logo from "../media/Logo.vue";
 import XIcon from "../media/XIcon.vue";
 import Sad from "../media/Sad.vue";
@@ -8,18 +8,36 @@ import Happy from "../media/Happy.vue";
 import VeryHappy from "../media/VeryHappy.vue";
 import { store } from "../store.js";
 
-function getData(a){
-  store.currentTab = 'Thanks'
-  const date = new Date();
-  const data = {
-    ux: a,
-    date: date,
-    userLang: navigator.language || navigator.userLanguage,
-    url: window.location.href,
-    //...
-  }
-  console.log(data)
-}
+export default {
+  components: {
+    Logo,
+    XIcon,
+    Sad,
+    Unhappy,
+    Neutral,
+    Happy,
+    VeryHappy,
+  },
+  props: {
+    clientid: String,
+  },
+  methods: {
+    getData(a) {
+      store.currentTab = "Thanks";
+      const date = new Date();
+      const data = {
+        ux: a,
+        date: date,
+        userLang: navigator.language || navigator.userLanguage,
+        url: window.location.href,
+        clientID: store.clientID
+        //...
+      };
+      console.log(data);
+    },
+  
+  },
+};
 </script>
 
 <template>
@@ -28,7 +46,7 @@ function getData(a){
       <div class="flex space-x-5">
         <Logo class="h-10 w-10 min-w-fit my-auto hidden sm:flex" />
         <h1 class="sm:text-xl pb-3 my-auto max-w-xs">
-          ¿Qué tan satisfecho estás con nuestros servicios hoy?
+          ¿Qué tan satisfecho estás con nuestros servicios hoy?{{clientid}}
         </h1>
       </div>
       <button

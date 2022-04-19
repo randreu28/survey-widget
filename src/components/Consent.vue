@@ -1,7 +1,7 @@
 <script setup>
-import Logo from '../media/Logo.vue'
-import XIcon from '../media/XIcon.vue'
-import { store } from '../store.js'
+import Logo from "../media/Logo.vue";
+import XIcon from "../media/XIcon.vue";
+import { store } from "../store.js";
 </script>
 
 <template>
@@ -13,7 +13,10 @@ import { store } from '../store.js'
           ¡Ayudanos a mejorar nuestros servicios!
         </h1>
       </div>
-      <button class="hover:bg-gray-100 rounded p-2 h-fit" @click="store.currentTab = null">
+      <button
+        class="hover:bg-gray-100 rounded p-2 h-fit"
+        @click="store.currentTab = null"
+      >
         <XIcon class="h-6 w-6" />
       </button>
     </div>
