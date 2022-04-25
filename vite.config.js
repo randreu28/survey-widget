@@ -17,6 +17,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: undefined,
+        entryFileNames: `survey-widget.js`,
       },
     },
   },
