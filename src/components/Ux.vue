@@ -30,7 +30,7 @@ export default {
         date: date,
         userLang: navigator.language || navigator.userLanguage,
         url: window.location.href,
-        clientID: store.clientID,
+        clientID: store.clientID
         //...
       };
       fetch("http://httpbin.org/post?key=abc123", {
@@ -49,7 +49,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="drop-shadow-2xl">
     <div class="flex space-x-10">
       <div class="flex space-x-5">
         <Logo class="h-10 w-10 min-w-fit my-auto hidden sm:flex" />

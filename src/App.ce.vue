@@ -18,11 +18,16 @@ export default {
   props: {
     clientid: String,
   },
+  methods:{
+    clientID(){
+      store.clientID = this.clientid;
+    }
+  }
 };
 </script>
 
 <template>
-  {{ (store.clientID = clientid) }}
+{{clientID()}}
   <Transition name="fade" mode="out-in">
     <component
       v-if="store.currentTab !== null"

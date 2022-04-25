@@ -7,7 +7,7 @@ setTimeout(function () {
 </script>
 
 <template>
-  <div class="flex justify-between space-x-5">
+  <div class="flex justify-between space-x-5 drop-shadow-2xl">
     <Logo class="h-6 w-6 m-auto" />
     <h1 class="">Gracias!</h1>
   </div>
