@@ -30,12 +30,20 @@ export default {
         date: date,
         userLang: navigator.language || navigator.userLanguage,
         url: window.location.href,
-        clientID: store.clientID
+        clientID: store.clientID,
         //...
       };
-      console.log(data);
+      fetch("http://httpbin.org/post?key=abc123", {
+        method: "POST",
+        body: JSON.stringify(data),
+      })
+        .then((response) => response.json())
+        .then((response) => {
+          console.log(response);
+        }), error => {
+          console.error(error);
+        };
     },
-  
   },
 };
 </script>
@@ -46,7 +54,7 @@ export default {
       <div class="flex space-x-5">
         <Logo class="h-10 w-10 min-w-fit my-auto hidden sm:flex" />
         <h1 class="sm:text-xl pb-3 my-auto max-w-xs">
-          ¿Qué tan satisfecho estás con nuestros servicios hoy?{{clientid}}
+          ¿Qué tan satisfecho estás con nuestros servicios hoy?{{ clientid }}
         </h1>
       </div>
       <button
