@@ -4,4 +4,4 @@ import "./index.css";
 
 const element = defineCustomElement(App);
 
-customElements.define("ux-survey", element);
+customElements.define("survey-widget", element);
