@@ -5,7 +5,7 @@ import { store } from "../store.js";
 </script>
 
 <template>
-  <div>
+  <div class="drop-shadow-2xl">
     <div class="flex space-x-10">
       <div class="flex space-x-5">
         <Logo class="h-10 w-10 min-w-fit my-auto hidden sm:flex" />

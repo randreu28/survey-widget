@@ -7,7 +7,14 @@ import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx(), cssInjectedByJsPlugin()],
+  plugins: [vue({
+    template: {
+      compilerOptions: {
+        // treat all tags with a dash as custom elements
+        isCustomElement: (tag) => tag.includes('-')
+      }
+    }
+  }), vueJsx(), cssInjectedByJsPlugin()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
@@ -17,7 +24,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: undefined,
-        entryFileNames: `survey-widget.js`,
+        entryFileNames: `survey-widget.js`, /* Consistent file name output */
       },
     },
   },
