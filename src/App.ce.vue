@@ -18,21 +18,32 @@ export default {
   props: {
     clientid: String,
   },
-  methods:{
-    clientID(){
+  methods: {
+    clientID() {
       store.clientID = this.clientid;
-    }
-  }
+    },
+  },
 };
 </script>
 
 <template>
-{{clientID()}}
+  {{ clientID() }}
   <Transition name="fade" mode="out-in">
     <component
       v-if="store.currentTab !== null"
       :is="store.currentTab"
-      class="fixed z-[999] p-5 bottom-0 right-0 m-3 sm:m-6 text-black bg-white rounded-xl"
+      class="
+        fixed
+        z-[999]
+        p-5
+        bottom-0
+        right-0
+        m-3
+        sm:m-6
+        text-black
+        bg-white
+        rounded-xl
+      "
     >
     </component>
   </Transition>
@@ -40,5 +51,13 @@ export default {
 
 <!-- Being a CustomWebComponent, the css clases get scoped, so I had to reference tailwind again-->
 <style lang="scss">
-  @import "./index.css";
+@import "./index.css";
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.25s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
