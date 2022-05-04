@@ -8,7 +8,18 @@ setTimeout(function () {
 
 <template>
   <div class="flex justify-between space-x-5 drop-shadow-2xl">
-    <Logo class="h-6 w-6 m-auto" />
-    <h1 class="">Gracias!</h1>
+    <img
+      v-if="store.logo_src"
+      :src="store.logo_src"
+      class="h-10 w-10 min-w-fit my-auto hidden sm:flex"
+    />
+    <img
+      v-else
+      :src="store.default.logo_src"
+      class="h-10 w-10 min-w-fit my-auto hidden sm:flex"
+    />
+    <h1 class="my-auto">
+      {{ store.thanks_title ? store.thanks_title : store.default.thanks_title }}
+    </h1>
   </div>
 </template>

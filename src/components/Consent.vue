@@ -6,11 +6,24 @@ import { store } from "../store.js";
 
 <template>
   <div class="drop-shadow-2xl">
-    <div class="flex space-x-10">
+    <div class="flex justify-between pb-4">
       <div class="flex space-x-5">
-        <Logo class="h-10 w-10 min-w-fit my-auto hidden sm:flex" />
-        <h1 class="text-xl pb-3 my-auto max-w-xs">
-          ¡Ayudanos a mejorar nuestros servicios!
+        <img
+          v-if="store.logo_src"
+          :src="store.logo_src"
+          class="h-10 w-10 min-w-fit my-auto hidden sm:flex"
+        />
+        <img
+          v-else
+          :src="store.default.logo_src"
+          class="h-10 w-10 min-w-fit my-auto hidden sm:flex"
+        />
+        <h1 class="text-xl my-auto max-w-xs">
+          {{
+            store.consent_title
+              ? store.consent_title
+              : store.default.consent_title
+          }}
         </h1>
       </div>
       <button
@@ -25,18 +38,27 @@ import { store } from "../store.js";
         @click="store.currentTab = null"
         class="text-blue-500 py-2 px-3 hover:bg-blue-100 rounded-lg duration-100 font-semibold"
       >
-        No, gracias
+        {{
+          store.consent_confirm
+            ? store.consent_confirm
+            : store.default.consent_confirm
+        }}
       </button>
       <button
         @click="store.currentTab = 'Survey'"
         class="text-white bg-blue-600 rounded-lg py-2 px-3 font-semibold hover:bg-opacity-90 duration-100"
       >
-        Ayudanos
+        {{
+          store.consent_decline ? store.consent_decline : store.consent_decline
+        }}
       </button>
     </div>
     <p class="max-w-fit text-sm text-gray-600 pt-1">
-      Al continuar, accede que utilicemos sus respuestas y datos de usuario para
-      mejorar nuestros servicios.
+      {{
+        store.consent_disclaimer
+          ? store.consent_disclaimer
+          : store.consent_disclaimer
+      }}
     </p>
   </div>
 </template>

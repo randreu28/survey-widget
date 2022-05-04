@@ -16,18 +16,32 @@ export default {
     };
   },
   props: {
-    clientid: String,
+    client_id: String,
+    logo_src: String,
+    consent_title: String,
+    consent_confirm: String,
+    consent_decline: String,
+    consent_disclaimer: String,
+    survey_title: String,
+    thanks_title: String,
   },
   methods: {
-    clientID() {
-      store.clientID = this.clientid;
+    storeSettings() {
+      store.client_id = this.client_id;
+      store.logo_src = this.logo_src;
+      store.consent_title = this.consent_title;
+      store.consent_confirm = this.consent_confirm;
+      store.consent_decline = this.consent_decline;
+      store.consent_disclaimer = this.consent_disclaimer;
+      store.survey_title = this.survey_title;
+      store.thanks_title = this.thanks_title;
     },
   },
 };
 </script>
 
 <template>
-  {{ clientID() }}
+  {{ storeSettings() }}
   <Transition name="fade" mode="out-in">
     <component
       v-if="store.currentTab !== null"

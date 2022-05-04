@@ -21,6 +21,11 @@ export default {
   props: {
     clientid: String,
   },
+  data() {
+    return {
+      store,
+    };
+  },
   methods: {
     getData(a) {
       store.currentTab = "Thanks";
@@ -30,7 +35,7 @@ export default {
         date: date,
         userLang: navigator.language || navigator.userLanguage,
         url: window.location.href,
-        clientID: store.clientID
+        client_id: store.client_id,
         //...
       };
       fetch("http://httpbin.org/post?key=abc123", {
@@ -40,7 +45,8 @@ export default {
         .then((response) => response.json())
         .then((response) => {
           console.log(response);
-        }), error => {
+        }),
+        (error) => {
           console.error(error);
         };
     },
@@ -50,11 +56,22 @@ export default {
 
 <template>
   <div class="drop-shadow-2xl">
-    <div class="flex space-x-10">
+    <div class="flex space-x-10 justify-between pb-4">
       <div class="flex space-x-5">
-        <Logo class="h-10 w-10 min-w-fit my-auto hidden sm:flex" />
-        <h1 class="sm:text-xl pb-3 my-auto max-w-xs">
-          ¿Qué tan satisfecho estás con nuestros servicios hoy?{{ clientid }}
+        <img
+          v-if="store.logo_src"
+          :src="store.logo_src"
+          class="h-10 w-10 min-w-fit my-auto hidden sm:flex"
+        />
+        <img
+          v-else
+          :src="store.default.logo_src"
+          class="h-10 w-10 min-w-fit my-auto hidden sm:flex"
+        />
+        <h1 class="sm:text-xl my-auto max-w-xs">
+          {{
+            store.survey_title ? store.survey_title : store.default.survey_title
+          }}
         </h1>
       </div>
       <button
