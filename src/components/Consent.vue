@@ -28,7 +28,7 @@ import { store } from "../store.js";
         No, gracias
       </button>
       <button
-        @click="store.currentTab = 'Ux'"
+        @click="store.currentTab = 'Survey'"
         class="text-white bg-blue-600 rounded-lg py-2 px-3 font-semibold hover:bg-opacity-90 duration-100"
       >
         Ayudanos
