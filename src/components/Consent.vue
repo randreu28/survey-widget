@@ -9,8 +9,8 @@ import { store } from "../store.js";
     <div class="flex justify-between pb-4">
       <div class="flex space-x-5">
         <img
-          v-if="store.logo_src"
-          :src="store.logo_src"
+          v-if="store.config.logo_src"
+          :src="store.config.logo_src"
           class="h-10 w-10 min-w-fit my-auto hidden sm:flex"
         />
         <img
@@ -20,8 +20,8 @@ import { store } from "../store.js";
         />
         <h1 class="text-xl my-auto max-w-xs">
           {{
-            store.consent_title
-              ? store.consent_title
+            store.config.consent_title
+              ? store.config.consent_title
               : store.default.consent_title
           }}
         </h1>
@@ -39,8 +39,8 @@ import { store } from "../store.js";
         class="text-blue-500 py-2 px-3 hover:bg-blue-100 rounded-lg duration-100 font-semibold"
       >
         {{
-          store.consent_decline
-            ? store.consent_decline
+          store.config.consent_decline
+            ? store.config.consent_decline
             : store.default.consent_decline
         }}
       </button>
@@ -49,15 +49,15 @@ import { store } from "../store.js";
         class="text-white bg-blue-600 rounded-lg py-2 px-3 font-semibold hover:bg-opacity-90 duration-100"
       >
         {{
-          store.consent_confirm ? store.consent_confirm : store.default.consent_confirm
+          store.config.consent_confirm ? store.config.consent_confirm : store.default.consent_confirm
         }}
       </button>
     </div>
     <p class="max-w-fit text-sm text-gray-600 pt-1">
       {{
-        store.consent_disclaimer
-          ? store.consent_disclaimer
-          : store.consent_disclaimer
+        store.config.consent_disclaimer
+          ? store.config.consent_disclaimer
+          : store.default.consent_disclaimer
       }}
     </p>
   </div>

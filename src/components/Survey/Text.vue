@@ -21,10 +21,10 @@
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
       "
       rows="3"
-      placeholder="Tu respuesta"
+      :placeholder="store.config.survey_placeholder ? store.config.survey_placeholder : store.default.survey_placeholder"
     />
     <button @click="textValue ? getData(textValue) : isntValid = true" class="text-white bg-blue-600 rounded-lg py-2 px-3 font-semibold hover:bg-opacity-90 duration-100 float-right mt-3">
-      Enviar
+      {{store.config.survey_confirm ? store.config.survey_confirm : store.default.survey_confirm}}
     </button>
     <p v-if="isntValid" class="p-2 text-red-500">Porfavor, escribe una respuesta</p>
 </template>

@@ -28,8 +28,8 @@ export default {
     <div class="flex justify-between pb-4">
       <div class="flex space-x-5">
         <img
-          v-if="store.logo_src"
-          :src="store.logo_src"
+          v-if="store.config.logo_src"
+          :src="store.config.logo_src"
           class="h-10 w-10 min-w-fit my-auto hidden sm:flex"
         />
         <img
@@ -39,7 +39,7 @@ export default {
         />
         <h1 class="text-xl my-auto max-w-xs">
           {{
-            store.survey_title ? store.survey_title : store.default.survey_title
+            store.config.survey_title ? store.config.survey_title : store.default.survey_title
           }}
         </h1>
       </div>
