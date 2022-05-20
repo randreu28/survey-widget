@@ -63,11 +63,12 @@ export default {
     };
   },
   methods: {
-    getData(a) {
+    getData(value) {
       store.currentTab = "Thanks";
       const date = new Date();
       const data = {
-        ux: a,
+        surveyType: "LinearScale",
+        value: value,
         date: date,
         userLang: navigator.language || navigator.userLanguage,
         url: window.location.href,

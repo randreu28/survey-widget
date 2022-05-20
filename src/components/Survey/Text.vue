@@ -44,11 +44,12 @@ export default {
     };
   },
   methods: {
-    getData(a) {
+    getData(answer) {
       store.currentTab = "Thanks";
       const date = new Date();
       const data = {
-        ux: a,
+        surveyType: "Text",
+        answer: answer,
         date: date,
         userLang: navigator.language || navigator.userLanguage,
         url: window.location.href,
