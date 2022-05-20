@@ -1,12 +1,16 @@
 <script>
 import Logo from "../media/Logo.vue";
+import XIcon from "../media/XIcon.vue";
 import LinearScale from "./Survey/LinearScale.vue";
+import Text from "./Survey/Text.vue";
 import { store } from "../store.js";
 
 export default {
   components: {
     Logo,
-    LinearScale
+    LinearScale,
+    Text,
+    XIcon,
   },
   props: {
     clientid: String,
@@ -21,7 +25,7 @@ export default {
 
 <template>
   <div class="drop-shadow-2xl">
-    <div class="flex space-x-10 justify-between pb-4">
+    <div class="flex justify-between pb-4">
       <div class="flex space-x-5">
         <img
           v-if="store.logo_src"
@@ -33,7 +37,7 @@ export default {
           :src="store.default.logo_src"
           class="h-10 w-10 min-w-fit my-auto hidden sm:flex"
         />
-        <h1 class="sm:text-xl my-auto max-w-xs">
+        <h1 class="text-xl my-auto max-w-xs">
           {{
             store.survey_title ? store.survey_title : store.default.survey_title
           }}
@@ -46,6 +50,6 @@ export default {
         <XIcon class="h-6 w-6" />
       </button>
     </div>
-    <LinearScale/>
+    <Text />
   </div>
 </template>
