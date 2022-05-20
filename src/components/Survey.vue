@@ -50,6 +50,7 @@ export default {
         <XIcon class="h-6 w-6" />
       </button>
     </div>
-    <Text />
+    <Text v-if="store.config.survey_type == 'text' || !store.config.survey_type" />
+    <LinearScale v-else-if="store.config.survey_type == 'linear-scale'" /> 
   </div>
 </template>

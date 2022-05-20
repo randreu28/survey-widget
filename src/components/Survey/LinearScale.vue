@@ -33,8 +33,8 @@
       </button>
     </div>
     <div class="flex justify-between sm:text-lg">
-      <h2>Insatisfecho</h2>
-      <h2>Satisfecho</h2>
+      <h2>{{store.config.survey_left ? store.config.survey_left : store.default.survey_left}}</h2>
+      <h2>{{store.config.survey_right ? store.config.survey_right : store.default.survey_right}}</h2>
     </div>
   </div>
 </template>
