@@ -15,7 +15,8 @@
         ease-in-out
         m-0
         resize-x
-        w-80
+        w-full
+        min-w-fit
         max-w-lg
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
       "
