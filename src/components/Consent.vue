@@ -49,7 +49,7 @@ import { store } from "../store.js";
         class="text-white bg-blue-600 rounded-lg py-2 px-3 font-semibold hover:bg-opacity-90 duration-100"
       >
         {{
-          store.consent_confirm ? store.consent_confirm : store.consent_confirm
+          store.consent_confirm ? store.consent_confirm : store.default.consent_confirm
         }}
       </button>
     </div>

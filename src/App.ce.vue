@@ -17,6 +17,17 @@ export default {
   },
   props: {
     client_id: String,
+    survey_type: String,
+
+    //Text survey
+    survey_confirm: String,
+    survey_placeholder: String,
+
+    //Linear Scale survey
+    survey_left: String,
+    survey_right: String,
+
+    //Common on all survey types
     logo_src: String,
     consent_title: String,
     consent_confirm: String,
@@ -25,23 +36,14 @@ export default {
     survey_title: String,
     thanks_title: String,
   },
-  methods: {
-    storeSettings() {
-      store.client_id = this.client_id;
-      store.logo_src = this.logo_src;
-      store.consent_title = this.consent_title;
-      store.consent_confirm = this.consent_confirm;
-      store.consent_decline = this.consent_decline;
-      store.consent_disclaimer = this.consent_disclaimer;
-      store.survey_title = this.survey_title;
-      store.thanks_title = this.thanks_title;
-    },
+  created(){
+    store.config = this.$props;
   },
 };
+
 </script>
 
 <template>
-  {{ storeSettings() }}
   <Transition name="fade" mode="out-in">
     <component
       v-if="store.currentTab !== null"
