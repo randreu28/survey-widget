@@ -22,9 +22,10 @@
       rows="3"
       placeholder="Tu respuesta"
     />
-    <button @click="getData(textValue)" class="text-white bg-blue-600 rounded-lg py-2 px-3 font-semibold hover:bg-opacity-90 duration-100 float-right mt-3">
+    <button @click="textValue ? getData(textValue) : isntValid = true" class="text-white bg-blue-600 rounded-lg py-2 px-3 font-semibold hover:bg-opacity-90 duration-100 float-right mt-3">
       Enviar
     </button>
+    <p v-if="isntValid" class="p-2 text-red-500">Porfavor, escribe una respuesta</p>
 </template>
 
 <script>
@@ -39,6 +40,7 @@ export default {
     return {
       store,
       textValue: null,
+      isntValid: null,
     };
   },
   methods: {
