@@ -51,6 +51,6 @@ export default {
       </button>
     </div>
     <Text v-if="store.config.survey_type == 'text' || !store.config.survey_type" />
-    <LinearScale v-else-if="store.config.survey_type == 'linear-scale'" /> 
+    <LinearScale v-else-if="store.config.survey_type == 'linear_scale'" /> 
   </div>
 </template>

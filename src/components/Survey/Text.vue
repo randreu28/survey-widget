@@ -49,7 +49,7 @@ export default {
       store.currentTab = "Thanks";
       const date = new Date();
       const data = {
-        surveyType: "Text",
+        surveyType: "text",
         answer: answer,
         date: date,
         userLang: navigator.language || navigator.userLanguage,

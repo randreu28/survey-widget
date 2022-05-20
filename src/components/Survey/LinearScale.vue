@@ -67,7 +67,7 @@ export default {
       store.currentTab = "Thanks";
       const date = new Date();
       const data = {
-        surveyType: "LinearScale",
+        surveyType: "linear_scale",
         value: value,
         date: date,
         userLang: navigator.language || navigator.userLanguage,
